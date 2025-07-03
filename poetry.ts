@@ -31,11 +31,17 @@ function printPoems(poems: Poem[], label: string) {
     poems
       .map((p) => {
         const parts: string[] = [];
-
+        if (includeTitle && includeAuthor && includeLineCount && includeLines) {
+          parts.push(`Title: ${p.title}`);
+          parts.push(`Author: ${p.author}`);
+          parts.push(`Line Count: ${p.linecount}`);
+          parts.push('\n');
+          parts.push(p.lines.join("\n"));
+        }
         if (includeTitle) parts.push(`Title: ${p.title}`);
         if (includeAuthor) parts.push(`Author: ${p.author}`);
         if (includeLineCount) parts.push(`Line Count: ${p.linecount}`);
-         if (includeLines) parts.push('\n');
+        if (includeLines) parts.push('\n');
         if (includeLines) parts.push(p.lines.join("\n"));
 
         return parts.join("\n");
