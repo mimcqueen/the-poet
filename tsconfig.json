@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "outFile": "poetry.js",
+    "strict": true
+  },
+  "include": ["poetry.ts"]
+}
